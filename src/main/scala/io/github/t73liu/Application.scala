@@ -8,7 +8,10 @@ object Application extends App {
     .master("local[4]")
     .getOrCreate()
 
-  val df = spark.read.option("header", "true").csv("src/test/resources/USDT_XRP.300.poloniex.csv")
+  // survival: 0 = No, 1 = Yes
+  // pclass: social-economic status (1 = Upper, 2 = Middle, 3 = Lower)
+  val trainDF = spark.read.option("header", "true").csv("src/test/resources/kaggle-titanic/train.csv")
+  val testDF = spark.read.option("header", "true").csv("src/test/resources/kaggle-titanic/test.csv")
 
-  df.show(50)
+  spark.stop()
 }
