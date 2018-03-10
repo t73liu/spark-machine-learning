@@ -1,9 +1,16 @@
-# Spark Machine Learning project
+# Spark Machine Learning
+
+## Projects
+
+- [Titanic](https://www.kaggle.com/c/titanic) (In-progress)
+- [House Prices](https://www.kaggle.com/c/house-prices-advanced-regression-techniques) (In-progress)
+- [Digit Recognizer](https://www.kaggle.com/c/digit-recognizer) (In-progress)
 
 ## Setup
 
 1. Clone the repository.
-2. Run Application.java
+2. On Windows machines, set HADOOP_HOME pointing to a folder containing bin/winutils.exe 
+3. Run Titanic.scala
 
 ## License
 
