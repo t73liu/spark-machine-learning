@@ -2,9 +2,10 @@
 
 ## Projects
 
-- [Titanic](https://www.kaggle.com/c/titanic) (In-progress)
+- [Titanic](https://www.kaggle.com/c/titanic)
+    - Classification
 - [House Prices](https://www.kaggle.com/c/house-prices-advanced-regression-techniques) (In-progress)
-- [Digit Recognizer](https://www.kaggle.com/c/digit-recognizer) (In-progress)
+    - Regression
 
 ## Setup
 

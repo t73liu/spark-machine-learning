@@ -26,7 +26,7 @@ object Titanic extends App {
   val originalDF = spark.read
     .option("header", "true")
     .option("inferSchema", "true")
-    .csv("./src/test/resources/kaggle-titanic/train.csv")
+    .csv("./src/test/resources/titanic/train.csv")
   originalDF.cache()
 
   // Determined the fill values used
@@ -107,7 +107,7 @@ object Titanic extends App {
   val resultDF = spark.read
     .option("header", "true")
     .option("inferSchema", "true")
-    .csv("./src/test/resources/kaggle-titanic/test.csv")
+    .csv("./src/test/resources/titanic/test.csv")
     .na
     .fill(Map(
       "Sex" -> "male",
@@ -126,5 +126,5 @@ object Titanic extends App {
     .write
     .mode(SaveMode.Overwrite)
     .option("header", "true")
-    .csv("./src/test/resources/kaggle-titanic/result/")
+    .csv("./src/test/resources/titanic/result/")
 }

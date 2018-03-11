@@ -8,5 +8,11 @@ object HousePrices extends App {
     .master("local[*]")
     .getOrCreate()
 
-  // TODO Work in progress
+  val originalDF = spark.read
+    .option("header", "true")
+    .option("inferSchema", "true")
+    .csv("./src/test/resources/house/train.csv")
+
+  originalDF.printSchema()
+  originalDF.show()
 }
