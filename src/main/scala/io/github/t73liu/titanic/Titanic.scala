@@ -13,7 +13,7 @@ import scala.util.Random
 
 object Titanic extends App {
   val spark = SparkSession.builder()
-    .appName("Spark Machine Learning")
+    .appName("Titanic")
     .master("local[*]")
     .getOrCreate()
 
@@ -91,6 +91,7 @@ object Titanic extends App {
 
   val validatorModel = validator.fit(trainDF)
 
+  // Decision tree algorithm will not build the same tree every time
   val bestModel = validatorModel.bestModel
   println(s"Model Selected: ${bestModel.asInstanceOf[PipelineModel].stages.last.extractParamMap}")
 
