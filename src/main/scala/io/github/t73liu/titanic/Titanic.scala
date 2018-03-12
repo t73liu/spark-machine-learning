@@ -13,7 +13,7 @@ import scala.util.Random
 
 object Titanic extends App {
   val spark = SparkSession.builder()
-    .appName("Titanic")
+    .appName("Predicting Titanic Survival")
     .master("local[*]")
     .getOrCreate()
 
@@ -97,12 +97,11 @@ object Titanic extends App {
 
   val testAccuracy = binaryEvaluator.evaluate(bestModel.transform(testDF))
   println(s"Test Accuracy: $testAccuracy")
+  testDF.unpersist()
 
   val trainAccuracy = binaryEvaluator.evaluate(bestModel.transform(trainDF))
   println(s"Training Accuracy: $trainAccuracy")
-
   trainDF.unpersist()
-  testDF.unpersist()
 
   // Writes output for Kaggle
   val resultDF = spark.read
@@ -128,4 +127,6 @@ object Titanic extends App {
     .mode(SaveMode.Overwrite)
     .option("header", "true")
     .csv("./src/test/resources/titanic/result/")
+
+  spark.close()
 }

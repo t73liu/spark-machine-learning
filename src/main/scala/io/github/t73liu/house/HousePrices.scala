@@ -4,7 +4,7 @@ import org.apache.spark.sql.SparkSession
 
 object HousePrices extends App {
   val spark = SparkSession.builder()
-    .appName("Housing Prices")
+    .appName("Predicting Housing Prices")
     .master("local[*]")
     .getOrCreate()
 
