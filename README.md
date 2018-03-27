@@ -4,9 +4,7 @@
 
 - [Titanic](https://www.kaggle.com/c/titanic)
     - Classification
-- [House Prices](https://www.kaggle.com/c/house-prices-advanced-regression-techniques) (In-progress)
-    - Regression
-- [Anime](https://www.kaggle.com/CooperUnion/anime-recommendations-database) (In-progress)
+- [Anime](https://www.kaggle.com/CooperUnion/anime-recommendations-database)
     - Recommendation (Alternating Least Squares)
 
 ## Setup
